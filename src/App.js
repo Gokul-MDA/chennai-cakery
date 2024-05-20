@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import { authProtectedRoutes, publicRoutes } from "./utils/Routes";
+import AuthProtected from "./utils/AuthProtected";
+import PageNotFound from "./pages/pageNotFound";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Routes>
+        {publicRoutes.map((route) => (
+          <Route path={route.path} key={route.path} element={route.component} />
+        ))}
+        {authProtectedRoutes.map((route) => (
+          <Route
+            path={route.path}
+            key={route.path}
+            element={<AuthProtected>{route.component}</AuthProtected>}
+          />
+        ))}
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </React.Fragment>
   );
 }
 
