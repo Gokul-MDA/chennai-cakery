@@ -29,6 +29,9 @@ module.exports = {
           Percentage: "#EE6C4D",
           Button: "linear-gradient(120deg, #FF1E54 100%, #FF5B83 100%)",
         },
+        menu: {
+          gradient: "linear-gradient(120deg, #fceabb 100%, #f8b500 100%)",
+        },
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],

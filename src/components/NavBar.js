@@ -10,7 +10,7 @@ const NavBar = () => {
   const location = useLocation();
   const pathName = location.pathname;
   return (
-    <div className="flex justify-between px-14 align-middle h-[50px] items-center">
+    <div className="flex justify-between px-14 align-middle h-[50px] items-center static">
       <div className="w-1/4">
         <h3 className="font-poppins font-semibold text-sm">
           Chennai
@@ -30,13 +30,13 @@ const NavBar = () => {
           Home
         </NavLink>
         <NavLink
-          to={URL.about}
+          to={URL.offers}
           className={classNames("font-poppins text-sm", {
-            "text-Primary-Rosecus": pathName === URL.about,
-            "text-Layout-600": pathName !== URL.about,
+            "text-Primary-Rosecus": pathName === URL.offers,
+            "text-Layout-600": pathName !== URL.offers,
           })}
         >
-          About
+          Offers
         </NavLink>
         <NavLink
           to={URL.menu}
