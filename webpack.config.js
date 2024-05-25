@@ -26,6 +26,17 @@ module.exports = {
         },
       },
       {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[path][name].[ext]",
+            },
+          },
+        ],
+      },
+      {
         test: /\.css$/,
         use: ["style-loader", "css-loader", "postcss-loader"],
       },
@@ -38,5 +49,9 @@ module.exports = {
   ],
   resolve: {
     extensions: [".js", ".jsx"],
+    alias: {
+      "@src": path.resolve(__dirname, "src/"),
+      "@utils": path.resolve(__dirname, "src/utils/"),
+    },
   },
 };

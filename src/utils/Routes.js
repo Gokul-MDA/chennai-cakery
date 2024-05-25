@@ -4,7 +4,11 @@ import Home from "../pages/home";
 
 export const URL = {
   login: "login",
-  home: "home",
+  home: "/home",
+  about: "about",
+  menu: "menu",
+  gallery: "gallery",
+  contact: "contact",
 };
 
 const authProtectedRoutes = [{ path: URL.home, component: <Home /> }];
